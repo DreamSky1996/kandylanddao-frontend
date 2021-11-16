@@ -1,4 +1,4 @@
-# [Ω Olympus Frontend](https://app.olympusdao.finance/)
+# [Ω Olympus Frontend](https://cool-cake-2339.on.fleek.co/#/stake)
 This is the front-end repo for Olympus that allows users be part of the future of Greece. 
 
 ##  🔧 Setting up Local Development
