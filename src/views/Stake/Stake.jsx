@@ -439,7 +439,7 @@ function Stake() {
         </Paper>
       </Zoom>
 
-      <ExternalStakePool />
+      {/* <ExternalStakePool /> */}
     </div>
   );
 }

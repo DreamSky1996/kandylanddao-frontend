@@ -7,8 +7,8 @@ export const BLOCK_RATE_SECONDS = 13.14;
 export const TOKEN_DECIMALS = 9;
 
 export const POOL_GRAPH_URLS = {
-  4: "https://api.thegraph.com/subgraphs/name/pooltogether/rinkeby-v3_4_3",
-  1: "https://api.thegraph.com/subgraphs/name/pooltogether/pooltogether-v3_4_3",
+  97: "https://api.thegraph.com/subgraphs/name/pooltogether/rinkeby-v3_4_3",
+  56: "https://api.thegraph.com/subgraphs/name/pooltogether/pooltogether-v3_4_3",
 };
 
 interface IAddresses {
@@ -16,7 +16,7 @@ interface IAddresses {
 }
 
 export const addresses: IAddresses = {
-  4: {
+  97: {
     DAI_ADDRESS: "0xB2180448f8945C8Cc8AE9809E67D6bd27d8B2f2C", // duplicate
     OHM_ADDRESS: "0xC0b491daBf3709Ee5Eb79E603D73289Ca6060932",
     STAKING_ADDRESS: "0xC5d3318C0d74a72cD7C55bdf844e24516796BaB2",
@@ -35,7 +35,7 @@ export const addresses: IAddresses = {
     PT_PRIZE_POOL_ADDRESS: "0xf9081132864ed5e4980CFae83bDB122d86619281", // NEW
     PT_PRIZE_STRATEGY_ADDRESS: "0x2Df17EA8D6B68Ec444c9a698315AfB36425dac8b", // NEW
   },
-  1: {
+  56: {
     DAI_ADDRESS: "0x6b175474e89094c44da98b954eedeac495271d0f", // duplicate
     OHM_ADDRESS: "0x383518188c0c6d7730d91b2c03a03c837814a899",
     STAKING_ADDRESS: "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a", // The new staking contract
