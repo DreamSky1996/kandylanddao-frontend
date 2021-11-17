@@ -62,7 +62,7 @@ export const frax = new StableBond({
   bondContractABI: FraxBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",  // frax bond address
+      bondAddress: "0x8510c8c2B6891E04864fa196693D44E6B6ec2514", // frax bond address
       reserveAddress: "0x853d955acef822db058eb8505911ed77f175b99e", // frax token address
     },
     [NetworkID.Testnet]: {
