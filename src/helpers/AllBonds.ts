@@ -47,8 +47,8 @@ export const dai = new StableBond({
       reserveAddress: "0x6b175474e89094c44da98b954eedeac495271d0f",
     },
     [NetworkID.Testnet]: {
-      bondAddress: "0xDea5668E815dAF058e3ecB30F645b04ad26374Cf",
-      reserveAddress: "0xB2180448f8945C8Cc8AE9809E67D6bd27d8B2f2C",
+      bondAddress: "0x3ABDd53eD14eB932da570e475325be13c26e3B6f",
+      reserveAddress: "0x7Aa1D10D2bbFe51834b12628c59e6d90b10bd3B3",
     },
   },
 });
@@ -62,12 +62,12 @@ export const frax = new StableBond({
   bondContractABI: FraxBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",
-      reserveAddress: "0x853d955acef822db058eb8505911ed77f175b99e",
+      bondAddress: "0x8510c8c2B6891E04864fa196693D44E6B6ec2514",  // frax bond address
+      reserveAddress: "0x853d955acef822db058eb8505911ed77f175b99e", // frax token address
     },
     [NetworkID.Testnet]: {
-      bondAddress: "0xF651283543fB9D61A91f318b78385d187D300738",
-      reserveAddress: "0x2F7249cb599139e560f0c81c269Ab9b04799E453",
+      bondAddress: "0x398833F0db17b09E3E5a9E113FCd0A7c4496bd8E",
+      reserveAddress: "0xf0CbE6f1F83E3FA8f7bAaDE96745ac0d071d3Ab6",
     },
   },
 });
@@ -81,8 +81,8 @@ export const lusd = new StableBond({
   bondContractABI: LusdBondContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x10C0f93f64e3C8D0a1b0f4B87d6155fd9e89D08D",
-      reserveAddress: "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+      bondAddress: "0x10C0f93f64e3C8D0a1b0f4B87d6155fd9e89D08D", // LUSD bond address
+      reserveAddress: "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0", // LUSD token address
     },
     [NetworkID.Testnet]: {
       bondAddress: "0x3aD02C4E4D1234590E87A1f9a73B8E0fd8CF8CCa",
