@@ -53,25 +53,6 @@ export const dai = new StableBond({
   },
 });
 
-export const frax = new StableBond({
-  name: "frax",
-  displayName: "FRAX",
-  bondToken: "FRAX",
-  isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
-  bondIconSvg: FraxImg,
-  bondContractABI: FraxBondContract,
-  networkAddrs: {
-    [NetworkID.Mainnet]: {
-      bondAddress: "0x8510c8c2B6891E04864fa196693D44E6B6ec2514", // frax bond address
-      reserveAddress: "0x853d955acef822db058eb8505911ed77f175b99e", // frax token address
-    },
-    [NetworkID.Testnet]: {
-      bondAddress: "0x398833F0db17b09E3E5a9E113FCd0A7c4496bd8E",
-      reserveAddress: "0xf0CbE6f1F83E3FA8f7bAaDE96745ac0d071d3Ab6",
-    },
-  },
-});
-
 export const lusd = new StableBond({
   name: "lusd",
   displayName: "LUSD",
@@ -91,12 +72,12 @@ export const lusd = new StableBond({
   },
 });
 
-export const eth = new CustomBond({
-  name: "eth",
-  displayName: "wETH",
+export const bnb = new CustomBond({
+  name: "bnb",
+  displayName: "wBNB",
   lpUrl: "",
   bondType: BondType.StableAsset,
-  bondToken: "wETH",
+  bondToken: "wBNB",
   isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
   bondIconSvg: wETHImg,
   bondContractABI: EthBondContract,
@@ -122,36 +103,6 @@ export const eth = new CustomBond({
   },
 });
 
-export const cvx = new CustomBond({
-  name: "cvx",
-  displayName: "CVX",
-  lpUrl: "",
-  bondType: BondType.StableAsset,
-  bondToken: "CVX",
-  isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
-  bondIconSvg: CvxImg,
-  bondContractABI: CvxBondContract,
-  reserveContract: ierc20Abi, // The Standard ierc20Abi since they're normal tokens
-  networkAddrs: {
-    [NetworkID.Mainnet]: {
-      bondAddress: "0x6754c69fe02178f54ADa19Ebf1C5569826021920",
-      reserveAddress: "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-    },
-    [NetworkID.Testnet]: {
-      bondAddress: "0xd43940687f6e76056789d00c43A40939b7a559b5",
-      reserveAddress: "0xB2180448f8945C8Cc8AE9809E67D6bd27d8B2f2C", // using DAI per `principal` address
-      // reserveAddress: "0x6761Cb314E39082e08e1e697eEa23B6D1A77A34b", // guessed
-    },
-  },
-  customTreasuryBalanceFunc: async function (this: CustomBond, networkID, provider) {
-    let cvxPrice: number = await getTokenPrice("convex-finance");
-    const token = this.getContractForReserve(networkID, provider);
-    let cvxAmount: BigNumberish = await token.balanceOf(addresses[networkID].TREASURY_ADDRESS);
-    cvxAmount = Number(cvxAmount.toString()) / Math.pow(10, 18);
-    return cvxAmount * cvxPrice;
-  },
-});
-
 export const ohm_dai = new LPBond({
   name: "ohm_dai_lp",
   displayName: "OHM-DAI LP",
@@ -172,28 +123,6 @@ export const ohm_dai = new LPBond({
   },
   lpUrl:
     "https://app.sushi.com/add/0x383518188c0c6d7730d91b2c03a03c837814a899/0x6b175474e89094c44da98b954eedeac495271d0f",
-});
-
-export const ohm_frax = new LPBond({
-  name: "ohm_frax_lp",
-  displayName: "OHM-FRAX LP",
-  bondToken: "FRAX",
-  isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
-  bondIconSvg: OhmFraxImg,
-  bondContractABI: FraxOhmBondContract,
-  reserveContract: ReserveOhmFraxContract,
-  networkAddrs: {
-    [NetworkID.Mainnet]: {
-      bondAddress: "0xc20CffF07076858a7e642E396180EC390E5A02f7",
-      reserveAddress: "0x2dce0dda1c2f98e0f171de8333c3c6fe1bbf4877",
-    },
-    [NetworkID.Testnet]: {
-      bondAddress: "0x7BB53Ef5088AEF2Bb073D9C01DCa3a1D484FD1d2",
-      reserveAddress: "0x11BE404d7853BDE29A3e73237c952EcDCbBA031E",
-    },
-  },
-  lpUrl:
-    "https://app.uniswap.org/#/add/v2/0x853d955acef822db058eb8505911ed77f175b99e/0x383518188c0c6d7730d91b2c03a03c837814a899",
 });
 
 export const ohm_lusd = new LPBond({
@@ -219,10 +148,10 @@ export const ohm_lusd = new LPBond({
     "https://app.sushi.com/add/0x383518188C0C6d7730D91b2c03a03C837814a899/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
 });
 
-export const ohm_weth = new CustomBond({
-  name: "ohm_weth_lp",
-  displayName: "OHM-WETH LP",
-  bondToken: "WETH",
+export const ohm_wbnb = new CustomBond({
+  name: "ohm_wbnb_lp",
+  displayName: "OHM-WBNB LP",
+  bondToken: "WBNB",
   isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
   bondIconSvg: OhmEthImg,
   bondContractABI: BondOhmEthContract,
@@ -274,8 +203,8 @@ export const ohm_weth = new CustomBond({
 // Is it a stableCoin bond? use `new StableBond`
 // Is it an LP Bond? use `new LPBond`
 // Add new bonds to this array!!
-// export const allBonds = [dai, frax, eth, cvx, ohm_dai, ohm_frax, lusd, ohm_lusd, ohm_weth];
-export const allBonds = [dai, frax, ohm_dai, ohm_frax, ohm_weth];
+export const allBonds = [dai, bnb, ohm_dai, lusd, ohm_lusd, ohm_wbnb];
+// export const allBonds = [dai, frax, ohm_dai, ohm_frax, ohm_weth];
 export const allBondsMap = allBonds.reduce((prevVal, bond) => {
   return { ...prevVal, [bond.name]: bond };
 }, {});
