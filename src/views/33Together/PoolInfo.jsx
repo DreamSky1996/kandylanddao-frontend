@@ -33,7 +33,7 @@ export const PoolInfo = props => {
 
   return (
     <Zoom in={true}>
-      <Paper className="ohm-card">
+      <Paper className="Kandy-card">
         <div className="card-header">
           <Typography variant="h5">Prize Pool Info</Typography>
         </div>
@@ -62,7 +62,7 @@ export const PoolInfo = props => {
               </div>
               <div className="data-row">
                 <Typography>Your wallet balance</Typography>
-                <Typography>{props.isAccountLoading ? <Skeleton width={100} /> : props.sohmBalance} sOHM</Typography>
+                <Typography>{props.isAccountLoading ? <Skeleton width={100} /> : props.sohmBalance} sKANDY</Typography>
               </div>
             </Box>
             <Divider color="secondary" />
@@ -77,23 +77,23 @@ export const PoolInfo = props => {
           <div className="data-row">
             <Typography>Total Deposits</Typography>
             <Typography>
-              {props.graphLoading ? <Skeleton width={100} /> : props.totalDeposits.toLocaleString()} sOHM
+              {props.graphLoading ? <Skeleton width={100} /> : props.totalDeposits.toLocaleString()} sKANDY
             </Typography>
           </div>
           <div className="data-row">
             <Typography>Total Sponsorship</Typography>
             <Typography>
-              {props.graphLoading ? <Skeleton width={100} /> : props.totalSponsorship.toLocaleString()} sOHM
+              {props.graphLoading ? <Skeleton width={100} /> : props.totalSponsorship.toLocaleString()} sKANDY
             </Typography>
           </div>
           <div className="data-row">
             <Typography>Yield Source</Typography>
-            <Typography>sOHM</Typography>
+            <Typography>sKANDY</Typography>
           </div>
           <div className="data-row">
             <Typography>Pool owner</Typography>
             <Box display="flex" alignItems="center">
-              <Typography>OlympusDAO</Typography>
+              <Typography>Kandyland</Typography>
             </Box>
           </div>
           <Divider color="secondary" />
@@ -120,13 +120,13 @@ export const PoolInfo = props => {
         <div className="data-row-centered">
           <div className="marginedBtn">
             <Button variant="outlined" color="secondary" href={poolTogetherUILinks(chainID)[0]} target="_blank">
-              <Typography variant="body1">sOHM Prize Pool&nbsp;</Typography>
+              <Typography variant="body1">sKANDY Prize Pool&nbsp;</Typography>
               <SvgIcon component={ArrowUp} color="primary" />
             </Button>
           </div>
           <div className="marginedBtn">
             <Button variant="outlined" color="secondary" href={poolTogetherUILinks(chainID)[1]} target="_blank">
-              <Typography variant="body1">sOHM Pool Details&nbsp;</Typography>
+              <Typography variant="body1">sKANDY Pool Details&nbsp;</Typography>
               <SvgIcon component={ArrowUp} color="primary" />
             </Button>
           </div>

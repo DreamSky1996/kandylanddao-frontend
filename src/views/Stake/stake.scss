@@ -27,13 +27,13 @@
     justify-items: center;
   }
 
-  .ohm-card .card-header {
+  .Kandy-card .card-header {
     position: relative;
   }
-  .ohm-card .header {
+  .Kandy-card .header {
     min-height: 3em;
   }
-  .ohm-card.secondary .card-header {
+  .Kandy-card.secondary .card-header {
     min-height: 33px !important;
     height: 20px;
   }
@@ -208,7 +208,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    .ohm-pairs p {
+    .Kandy-pairs p {
       margin-bottom: 0 !important;
     }
   }

@@ -1,8 +1,8 @@
 {
-  "short_name": "OlympusDAO",
+  "short_name": "Kandylnad",
   "start_url": ".",
   "homepage": "./",
-  "name": "OlympusDAO",
+  "name": "Kandylnad",
   "launch_path": "/public/index.html",
   "icons": [
     {

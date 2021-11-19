@@ -9,7 +9,7 @@
       background: rgba(100, 100, 100, 0.1) !important;
       backdrop-filter: blur(33px) !important;
       -webkit-backdrop-filter: blur(33px) !important;
-      .ohm-card {
+      .Kandy-card {
         opacity: 1 !important;
         height: auto;
       }
@@ -24,7 +24,7 @@
   @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .MuiBackdrop-root {
       background: rgba(100, 100, 100, 0.95);
-      .ohm-card {
+      .Kandy-card {
         height: auto;
       }
     }
@@ -35,7 +35,7 @@
     }
   }
   
-  .ohm-card {
+  .Kandy-card {
     max-width: 803px;
   }
 
@@ -93,7 +93,7 @@
 }
 
 .mobile #bond-view {
-  .ohm-card {
+  .Kandy-card {
     .card-content {
       justify-content: space-evenly !important;
       .bond-toggle-row {

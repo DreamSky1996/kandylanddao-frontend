@@ -94,7 +94,7 @@ export const dark = responsiveFontSizes(
         MuiPaper: {
           root: {
             backgroundColor: darkTheme.paperBg,
-            "&.ohm-card": {
+            "&.Kandy-card": {
               backgroundColor: darkTheme.paperBg,
             },
             "&.ohm-modal": {

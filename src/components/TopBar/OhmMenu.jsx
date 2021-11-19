@@ -24,13 +24,13 @@ const addTokenToWallet = (tokenSymbol, tokenAddress) => async () => {
     let tokenPath;
     let tokenDecimals = TOKEN_DECIMALS;
     switch (tokenSymbol) {
-      case "OHM":
+      case "KANDY":
         tokenPath = OhmImg;
         break;
       case "33T":
         tokenPath = token33tImg;
         break;
-      case "wsOHM":
+      case "wsKANDY":
         tokenPath = WsOhmImg;
         tokenDecimals = 18;
         break;
@@ -64,10 +64,10 @@ function OhmMenu() {
   const { chainID } = useWeb3Context();
   const networkID = chainID;
 
-  const SOHM_ADDRESS = addresses[networkID].SOHM_ADDRESS;
-  const OHM_ADDRESS = addresses[networkID].OHM_ADDRESS;
+  const SKANDY_ADDRESS = addresses[networkID].SKANDY_ADDRESS;
+  const KANDY_ADDRESS = addresses[networkID].KANDY_ADDRESS;
   const PT_TOKEN_ADDRESS = addresses[networkID].PT_TOKEN_ADDRESS;
-  const WSOHM_ADDRESS = addresses[networkID].WSOHM_ADDRESS;
+  const WSKANDY_ADDRESS = addresses[networkID].WSKANDY_ADDRESS;
   const handleClick = event => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
@@ -83,9 +83,9 @@ function OhmMenu() {
       onMouseLeave={e => handleClick(e)}
       id="ohm-menu-button-hover"
     >
-      <Button id="ohm-menu-button" size="large" variant="contained" color="secondary" title="OHM" aria-describedby={id}>
+      <Button id="ohm-menu-button" size="large" variant="contained" color="secondary" title="KANDY" aria-describedby={id}>
         <SvgIcon component={InfoIcon} color="primary" />
-        <Typography>OHM</Typography>
+        <Typography>KANDY</Typography>
       </Button>
 
       <Popper id={id} open={open} anchorEl={anchorEl} placement="bottom-start" transition>
@@ -95,7 +95,7 @@ function OhmMenu() {
               <Paper className="ohm-menu" elevation={1}>
                 <Box component="div" className="buy-tokens">
                   <Link
-                    href={`https://pancakeswap.finance/swap?inputCurrency=${daiAddress}&outputCurrency=${OHM_ADDRESS}`}
+                    href={`https://pancakeswap.finance/swap?inputCurrency=${daiAddress}&outputCurrency=${KANDY_ADDRESS}`}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -107,7 +107,7 @@ function OhmMenu() {
                   </Link>
 
                   {/* <Link
-                    href={`https://app.uniswap.org/#/swap?inputCurrency=${fraxAddress}&outputCurrency=${OHM_ADDRESS}`}
+                    href={`https://app.uniswap.org/#/swap?inputCurrency=${fraxAddress}&outputCurrency=${KANDY_ADDRESS}`}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -120,14 +120,14 @@ function OhmMenu() {
 
                   <Link component={NavLink} to="/wrap" style={{ textDecoration: "none" }}>
                     <Button size="large" variant="contained" color="secondary" fullWidth>
-                      <Typography align="left">Wrap sOHM</Typography>
+                      <Typography align="left">Wrap sKANDY</Typography>
                     </Button>
                   </Link>
                 </Box>
 
                 <Box component="div" className="data-links">
                   <Divider color="secondary" className="less-margin" />
-                  <Link href={`https://dune.xyz/shadow/Olympus-(OHM)`} target="_blank" rel="noreferrer">
+                  <Link href={`https://dune.xyz/shadow/Olympus-(KANDY)`} target="_blank" rel="noreferrer">
                     <Button size="large" variant="contained" color="secondary" fullWidth>
                       <Typography align="left">
                         Shadow's Dune Dashboard <SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
@@ -141,38 +141,38 @@ function OhmMenu() {
                     <Divider color="secondary" />
                     <p>ADD TOKEN TO WALLET</p>
                     <Box display="flex" flexDirection="row" justifyContent="space-between">
-                      {OHM_ADDRESS && (
-                        <Button variant="contained" color="secondary" onClick={addTokenToWallet("OHM", OHM_ADDRESS)}>
+                      {KANDY_ADDRESS && (
+                        <Button variant="contained" color="secondary" onClick={addTokenToWallet("KANDY", KANDY_ADDRESS)}>
                           <SvgIcon
                             component={ohmTokenImg}
                             viewBox="0 0 32 32"
                             style={{ height: "25px", width: "25px" }}
                           />
-                          <Typography variant="body1">OHM</Typography>
+                          <Typography variant="body1">KANDY</Typography>
                         </Button>
                       )}
-                      {SOHM_ADDRESS && (
-                        <Button variant="contained" color="secondary" onClick={addTokenToWallet("sOHM", SOHM_ADDRESS)}>
+                      {SKANDY_ADDRESS && (
+                        <Button variant="contained" color="secondary" onClick={addTokenToWallet("sKANDY", SKANDY_ADDRESS)}>
                           <SvgIcon
                             component={sOhmTokenImg}
                             viewBox="0 0 100 100"
                             style={{ height: "25px", width: "25px" }}
                           />
-                          <Typography variant="body1">sOHM</Typography>
+                          <Typography variant="body1">sKANDY</Typography>
                         </Button>
                       )}
-                      {WSOHM_ADDRESS && (
+                      {WSKANDY_ADDRESS && (
                         <Button
                           variant="contained"
                           color="secondary"
-                          onClick={addTokenToWallet("wsOHM", WSOHM_ADDRESS)}
+                          onClick={addTokenToWallet("wsKANDY", WSKANDY_ADDRESS)}
                         >
                           <SvgIcon
                             component={wsOhmTokenImg}
                             viewBox="0 0 180 180"
                             style={{ height: "25px", width: "25px" }}
                           />
-                          <Typography variant="body1">wsOHM</Typography>
+                          <Typography variant="body1">wsKANDY</Typography>
                         </Button>
                       )}
                       {PT_TOKEN_ADDRESS && (
@@ -195,7 +195,7 @@ function OhmMenu() {
 
                 <Divider color="secondary" />
                 <Link
-                  href="https://docs.olympusdao.finance/using-the-website/unstaking_lp"
+                  href="https://docs.Kandyland.finance/using-the-website/unstaking_lp"
                   target="_blank"
                   rel="noreferrer"
                 >

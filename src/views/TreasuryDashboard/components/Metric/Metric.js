@@ -25,12 +25,12 @@ export const MarketCap = () => {
   );
 };
 
-export const OHMPrice = () => {
+export const KANDYPrice = () => {
   const marketPrice = useSelector(state => state.app.marketPrice);
 
   return (
     <Metric className="price">
-      <Metric.Title>OHM Price</Metric.Title>
+      <Metric.Title>KANDY Price</Metric.Title>
       <Metric.Value>{marketPrice && formatCurrency(marketPrice, 2)}</Metric.Value>
     </Metric>
   );
@@ -50,12 +50,12 @@ export const CircSupply = () => {
   );
 };
 
-export const BackingPerOHM = () => {
+export const BackingPerKANDY = () => {
   const backingPerOhm = useSelector(state => state.app.treasuryMarketValue / state.app.circSupply);
 
   return (
     <Metric className="bpo">
-      <Metric.Title>Backing per OHM</Metric.Title>
+      <Metric.Title>Backing per KANDY</Metric.Title>
       <Metric.Value>{!isNaN(backingPerOhm) && formatCurrency(backingPerOhm, 2)}</Metric.Value>
     </Metric>
   );
@@ -68,23 +68,23 @@ export const CurrentIndex = () => {
     <Metric className="index">
       <Metric.Title>
         Current Index
-        <InfoTooltip message="The current index tracks the amount of sOHM accumulated since the beginning of staking. Basically, how much sOHM one would have if they staked and held a single OHM from day 1." />
+        <InfoTooltip message="The current index tracks the amount of sKANDY accumulated since the beginning of staking. Basically, how much sKANDY one would have if they staked and held a single KANDY from day 1." />
       </Metric.Title>
-      <Metric.Value>{currentIndex && trim(currentIndex, 2) + " sOHM"}</Metric.Value>
+      <Metric.Value>{currentIndex && trim(currentIndex, 2) + " sKANDY"}</Metric.Value>
     </Metric>
   );
 };
 
-export const WSOHMPrice = () => {
+export const WSKANDYPrice = () => {
   const wsOhmPrice = useSelector(state => state.app.marketPrice * state.app.currentIndex);
 
   return (
     <Metric className="wsoprice">
       <Metric.Title>
-        wsOHM Price
+        wsKANDY Price
         <InfoTooltip
           message={
-            "wsOHM = sOHM * index\n\nThe price of wsOHM is equal to the price of OHM multiplied by the current index"
+            "wsKANDY = sKANDY * index\n\nThe price of wsKANDY is equal to the price of KANDY multiplied by the current index"
           }
         />
       </Metric.Title>

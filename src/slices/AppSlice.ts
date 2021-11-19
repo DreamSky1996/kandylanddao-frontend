@@ -87,7 +87,7 @@ export const loadAppDetails = createAsyncThunk(
     ) as OlympusStakingv2;
 
     const sohmMainContract = new ethers.Contract(
-      addresses[networkID].SOHM_ADDRESS as string,
+      addresses[networkID].SKANDY_ADDRESS as string,
       sOHMv2,
       provider,
     ) as SOhmv2;
@@ -159,7 +159,7 @@ export const findOrLoadMarketPrice = createAsyncThunk(
 );
 
 /**
- * - fetches the OHM price from CoinGecko (via getTokenPrice)
+ * - fetches the KANDY price from CoinGecko (via getTokenPrice)
  * - falls back to fetch marketPrice from ohm-dai contract
  * - updates the App.slice when it runs
  */

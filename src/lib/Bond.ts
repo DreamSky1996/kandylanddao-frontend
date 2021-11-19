@@ -108,6 +108,7 @@ export abstract class Bond {
       marketPrice = Number(reserves[1].toString()) / Number(reserves[0].toString()) / 10 ** 9;
     } else {
       marketPrice = await getTokenPrice("convex-finance");
+      console.log(marketPrice);
     }
     return marketPrice;
   }

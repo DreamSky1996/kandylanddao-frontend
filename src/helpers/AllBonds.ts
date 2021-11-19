@@ -105,7 +105,7 @@ export const bnb = new CustomBond({
 
 export const ohm_dai = new LPBond({
   name: "ohm_dai_lp",
-  displayName: "OHM-DAI LP",
+  displayName: "KANDY-DAI LP",
   bondToken: "DAI",
   isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
   bondIconSvg: OhmDaiImg,
@@ -127,7 +127,7 @@ export const ohm_dai = new LPBond({
 
 export const ohm_lusd = new LPBond({
   name: "ohm_lusd_lp",
-  displayName: "OHM-LUSD LP",
+  displayName: "KANDY-LUSD LP",
   bondToken: "LUSD",
   isAvailable: { [NetworkID.Mainnet]: false, [NetworkID.Testnet]: true },
   bondIconSvg: OhmLusdImg,
@@ -150,7 +150,7 @@ export const ohm_lusd = new LPBond({
 
 export const ohm_wbnb = new CustomBond({
   name: "ohm_wbnb_lp",
-  displayName: "OHM-WBNB LP",
+  displayName: "KANDY-WBNB LP",
   bondToken: "WBNB",
   isAvailable: { [NetworkID.Mainnet]: true, [NetworkID.Testnet]: true },
   bondIconSvg: OhmEthImg,
@@ -185,7 +185,7 @@ export const ohm_wbnb = new CustomBond({
         (Number(valuation.toString()) / Math.pow(10, 9)) * (Number(markdown.toString()) / Math.pow(10, 18));
       return tokenUSD * Number(ethPrice.toString());
     } else {
-      // NOTE (appleseed): using OHM-DAI on rinkeby
+      // NOTE (appleseed): using KANDY-DAI on rinkeby
       const token = this.getContractForReserve(networkID, provider);
       const tokenAddress = this.getAddressForReserve(networkID);
       const bondCalculator = getBondCalculator(networkID, provider);

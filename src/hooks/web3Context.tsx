@@ -199,6 +199,7 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
   );
 
   useEffect(() => {
+    return;
     // logs non-functioning nodes && returns an array of working mainnet nodes
     NodeHelper.checkAllNodesStatus().then((validNodes: any) => {
       validNodes = validNodes.filter((url: boolean | string) => url !== false);
